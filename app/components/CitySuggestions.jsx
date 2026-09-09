@@ -17,7 +17,20 @@ function SuggestionItems({ items, onSelect }) {
   // Ogni elemento deve essere un <div className="suggestion-item"> cliccabile, con testo
   // "{name}, {country}" (se country è presente), che al click chiama onSelect() passando
   // { name, country, latitude, longitude } presi dall'item corrispondente.
-  return /* inserisci qui la logica map() con .slice(0, 5) */ null;
+  return (
+    /* inserisci qui la logica map() con .slice(0, 5) */
+    <>
+      {items.slice(0, 5).map((item) => (
+        <div className="suggestion-item" onClick={() => onSelect(item)}>
+          <h2>{item.name}</h2>
+          {item.country && <h3>{item.country}</h3>}
+          {item.latitude && <p>Latitudine: {item.latitude}</p>}
+          {item.longitude && <p>Longitudine: {item.longitude}</p>}
+        </div>
+      ))}
+      ;
+    </>
+  );
 }
 
 /**
