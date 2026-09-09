@@ -56,6 +56,21 @@ export async function getCoordinatesByCity(nome) {
   // Dopodichè effettua la fetch e lancia un Error se la risposta non è ok
   // Infine estrai il JSON. Se non ci sono risultati (dati.results è vuoto o assente), lancia un Error.
   // Altrimenti, ritorna l'array dei risultati.
+  const url = `${API_CITTÀ}?name=${encodeURIComponent(nome)}&count=10&language=it`;
+
+  try {
+    const risposta = await fetch(url);
+    if (!risposta.ok) {
+      throw Error(`Errore nella ricerca città (errore ${risposta.status}: ${risposta.statusText})`);
+    }
+    const dati = await risposta.json();
+    if (!dati.results || dati.results.length === 0) {
+      throw Error(`Nessun risultato trovato per la città "${nome}"`);
+    }
+    return dati.results;
+  } catch (err) {
+    throw alert(err);
+  }
 }
 
 /**
