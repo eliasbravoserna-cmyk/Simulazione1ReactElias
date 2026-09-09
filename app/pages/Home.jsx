@@ -28,7 +28,7 @@ function Home() {
       <section className="home-guide page-section">
         <h3>Come funziona</h3>
         {/* TODO 2: Aggiungi la classe CSS corretta a questo div per mostrare le GUIDE come una GRIGLIA */}
-        <div className="">
+        <div className="divider">
           <article className="guide-card">
             <h4>1. Cerca una citta</h4>
             <p>Vai su Ricerca e inserisci il nome della citta oppure le coordinate geografiche.</p>
