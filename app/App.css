@@ -433,8 +433,9 @@ input::placeholder {
   /* TODO 2: L'icona gigante del meteo e la temperatura sono disallineati e si posizionano
        uno sotto l'altro. Ripristina il layout in modo che stiano sulla stessa
        riga e siano allineati verticalmente al centro. */
-  display: block;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: var(--space-4);
 }
 
