@@ -69,7 +69,8 @@ export async function getCoordinatesByCity(nome) {
     }
     return dati.results;
   } catch (err) {
-    throw alert(err);
+    console.error('Errore ricerca città', err);
+    throw err;
   }
 }
 
